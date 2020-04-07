@@ -1,7 +1,7 @@
 class LinebotController < ApplicationController
   require 'line/bot'
 
-  protect_from_forgery :except => [:callback]
+  protect_from_forgery :except => [:recieve]
 
   def client
     @client ||= Line::Bot::Client.new { |config|
