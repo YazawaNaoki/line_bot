@@ -46,6 +46,7 @@ class LinebotController < ApplicationController
     end
     }
   end
+#
 
   private
 
