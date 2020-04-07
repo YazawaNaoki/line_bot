@@ -42,7 +42,7 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
     events.each { |event|
       userId = event['source']['userId']
-      
+
       case event
       when Line::Bot::Event::Message
         case event['type']
@@ -72,9 +72,7 @@ class LinebotController < ApplicationController
           "actions": [
               {
                 "type": "message",
-                # Botから送られてきたメッセージに表示される文字列です。
                 "label": "楽しい",
-                # ボタンを押した時にBotに送られる文字列です
                 "text": "楽しい"
               },
               {
