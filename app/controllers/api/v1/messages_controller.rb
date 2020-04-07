@@ -6,6 +6,7 @@ module Api
 
       def new
         @message = Message.new
+        @messages = Message.all
       end
 
       def create
