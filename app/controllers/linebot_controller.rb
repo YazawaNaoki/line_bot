@@ -41,8 +41,8 @@ class LinebotController < ApplicationController
     body = request.body.read
     events = client.parse_events_from(body)
     events.each { |event|
-      userId = event['source']['userId']  #userId取得
-      p 'UserID: ' + userId # UserIdを確認
+      userId = event['source']['userId']
+      p 'UserID: ' + userId
     end
     }
   end
