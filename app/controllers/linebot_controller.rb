@@ -42,18 +42,13 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
     events.each { |event|
       userId = event['source']['userId']
-      p 'UserID: ' + userId
 
       case event
       when Line::Bot::Event::Message # Messageの場合
         case event['type']
         when 'message'
           Message.create(
-            user_uid: userId, 
-            replyToken: event['replyToken'],  
-            message_id: event['message']['id'], 
-            message_type: event['message']['type'], 
-            message_text: event['message']['text']
+            user_id: userId
            )
         end
       end
