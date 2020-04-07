@@ -43,8 +43,7 @@ class LinebotController < ApplicationController
     events.each { |event|
       userId = event['source']['userId']
       p 'UserID: ' + userId
-    end
-    }
+  }
   end
 #
 
